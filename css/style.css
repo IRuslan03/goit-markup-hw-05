@@ -111,14 +111,23 @@ body {
 .nav-link:hover,
 .nav-link:focus {
     color: var(--effect-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-link:hover {
     color: var(--effect-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* hero */
 
 .hero {
+    position: relative;
     padding: 200px 0;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/back.jpg);
     background-color: var(--second-back-color);
@@ -147,7 +156,7 @@ body {
 .hero-btn {
     color: var(--white-color);
     padding: 10px 32px;
-    background: var(--effect-color);
+    background-color: var(--effect-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     font-weight: bold;
@@ -159,7 +168,70 @@ body {
 .hero-btn:focus,
 .hero-btn:hover {
     background-color: var(--button-color-hover);
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    visibility: visible;
+
+    transition-property: transform,
+    opacity,
+    visibility;
+    transition-duration: 1000ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: scale(0);
+
+
+}
+
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+   
+
+}
+
+.modal-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 /* advantage */
 
@@ -207,6 +279,7 @@ body {
     display: flex;
 }
 .task-item {
+    position: relative;
     margin-right: 30px;
 }
 .task-item:last-child {
@@ -216,6 +289,26 @@ body {
     display: block;
     max-width: 100%;
     max-height: auto;
+}
+.task-name-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 370px;
+    height: 70px;
+    background: rgba(47, 48, 58, 0.8);
+}
+.task-name {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
 }
 
 
@@ -282,6 +375,10 @@ body {
     background-color: var(--effect-color);
     border-radius: 50%;
     fill: var(--white-color);
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social {
     display: flex;
@@ -329,6 +426,10 @@ border-radius: 4px;
     box-sizing: border-box;
     border-radius: 4px;
     fill: var(--effect-color);
+
+    transition-property: fill, border;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
  
@@ -374,7 +475,11 @@ border-radius: 4px;
 .footer .footer-link:hover,
 .footer .footer-link:focus {
    background-color: var(--effect-color);
-}
+
+   transition-property: background-color;
+   transition-duration: 250ms;
+   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+   }
 
 .footer-list p {
     margin-top: 0px;
@@ -430,6 +535,10 @@ border-radius: 4px;
 .footer .item-address :hover,
 .footer .item-address :focus {
     color: var(--effect-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -454,6 +563,10 @@ border-radius: 4px;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
+
+        transition-property: box-shadow;
+        transition-duration: 250ms;
+        transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-filter {
     padding: 6px 22px;
@@ -498,10 +611,49 @@ border-radius: 4px;
 .card-href {
     display: block;
 }
+
+.img-thumb {
+position: relative;
+overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    }
+.img-thumb:hover .overlay {
+    transform: translateY(0);
+
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-overlay {
+    padding: 64px 24px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+
 .card-href:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
         0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
+
+        transition-property: box-shadow;
+        transition-duration: 250ms;
+        transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-name {

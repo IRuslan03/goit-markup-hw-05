@@ -54,7 +54,16 @@
              <h1 class="hero-title">
                  ЕФЕКТИВНІ РІШЕННЯ ДЛЯ ВАШОГО БІЗНЕСУ
              </h1>
-             <button type="button" class="hero-btn">Замовити послугу</button>
+             <button data-modal-open type="button" class="hero-btn">Замовити послугу</button>
+             <div class="backdrop is-hidden" data-modal>
+                 <div class="modal">
+                     <button data-modal-close type="button" class="modal-btn"><svg width="11" height="11">
+                    <use href="./images/closed.svg#icon-closed">
+                    </use>
+                    </svg>
+                     </button>
+                 </div>
+             </div>
          </section>
          <!--Переваги нашої фірми-->
          <section class="section advantege-section">
@@ -129,14 +138,23 @@
                      <img class="img" src="./images/wwdone.jpg" 
                      alt="ми працюємо"
                      width="370">
+                      <div class="task-name-thumb">
+                         <p class="task-name">Декстопні додатки</p>
+                     </div>
                  </li>
                  <li class="task-item">
                      <img class="img" src="./images/wwdtwo.jpg" alt="ми працюємо"
                      width="370">
+                     <div class="task-name-thumb">
+                         <p class="task-name">Мобільні додатки</p>
+                     </div>
                  </li>
                  <li class="task-item">
                      <img class="img" src="./images/wwdthree.jpg" alt="ми працюємо"
                      width="370">
+                     <div class="task-name-thumb">
+                         <p class="task-name">Дизайнерські рішення</p>
+                     </div>
                  </li>
              </ul>
              </div>
@@ -401,8 +419,7 @@
                              </ul>
                              </div>
                  </section>
-                 
-         </main>
+                 </main>
      <footer class="footer">
       <div class="container footer-list">            
             <div class="item-address">
