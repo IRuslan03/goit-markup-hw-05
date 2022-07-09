@@ -82,9 +82,37 @@ body {
 .contacts-item:not(:last-child){
     margin-right: 50px;
 }
-.nav-link.current {
-    color: var(--effect-color);
+.nav-link.current::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #2196F3;
+    border-radius: 2px;
+
+    bottom: 0;
+    left: 0;
 }
+.nav-link.current {
+ position: relative;
+ color: var(--effect-color);
+}
+
+.nav-link.current::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #2196F3;
+    border-radius: 2px;
+
+    bottom: 0;
+    left: 0;
+
+}
+
 .nav-link,
 .contacts-link {
     color: var(--main-color);
