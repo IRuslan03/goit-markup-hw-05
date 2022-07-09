@@ -69,6 +69,10 @@ body {
     letter-spacing: 0.03em;
     color: var(--effect-color);
     margin-right: 93px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-color-black {
     color: var(--main-color);
@@ -532,10 +536,18 @@ transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 
 .footer .title-white {
     color: var(--white-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .title-rgba {
     color: rgba(255, 255, 255, 0.6);
+    
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
